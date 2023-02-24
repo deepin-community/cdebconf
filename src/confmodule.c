@@ -18,7 +18,7 @@
 #include <signal.h>
 #include <errno.h>
 
-#include <debian-installer.h>
+#include "di/di-all.h"
 
 #ifdef SELINUX_ENABLED
 #include <selinux/selinux.h>
