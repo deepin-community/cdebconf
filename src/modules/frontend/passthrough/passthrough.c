@@ -49,7 +49,7 @@
 #include <sys/socket.h>
 #include <sys/un.h>
 
-#include "debian-installer.h"
+#include "di/di-all.h"
 
 struct passthrough_data {
     FILE *readfh, *writefh;

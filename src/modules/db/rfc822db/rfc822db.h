@@ -2,7 +2,7 @@
 #define _RFC822DB_H_
 
 #include <stdbool.h>
-#include <debian-installer/slist.h>
+#include "di/slist.h"
 #include "rfc822.h"
 
 struct template;

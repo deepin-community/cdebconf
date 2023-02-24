@@ -16,7 +16,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-#include <debian-installer.h>
+#include "di/di-all.h"
 
 static struct configuration *config = NULL;
 static struct frontend *frontend = NULL;
