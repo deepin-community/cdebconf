@@ -72,6 +72,7 @@ $(udebbuild)/config.status: configure
 	DEB_CFLAGS_MAINT_APPEND="$(DEBUGOPTFLAG) $(SIZEOPTFLAG) -fomit-frame-pointer" \
 	dh_auto_configure -B$(udebbuild) -- \
 		--libexecdir=\$${prefix}/lib \
+		--enable-d-i \
 		--without-rpath --with-db="rfc822db stack" \
 		--with-frontend="$(UDEB_FRONTENDS)" \
 		--with-default-frontend=newt \
