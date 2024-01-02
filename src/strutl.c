@@ -13,7 +13,7 @@
 #endif
 #include <assert.h>
 
-#include "di/di-all.h"
+#include "debian-installer.h"
 
 /*  Structure used to sort translated lists  */
 typedef struct {

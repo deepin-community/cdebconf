@@ -25,14 +25,14 @@ msgstr ""
 "Project-Id-Version: debian-installer.2006071\n"
 "Report-Msgid-Bugs-To: cdebconf@packages.debian.org\n"
 "POT-Creation-Date: 2016-06-05 14:47+0000\n"
-"PO-Revision-Date: 2011-03-01 12:49+0400\n"
-"Last-Translator: Aiet Kolkhi <aietkolkhi@gmail.com>\n"
+"PO-Revision-Date: 2023-09-18 12:02+0000\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Type: select
 #. Choices
@@ -96,12 +96,12 @@ msgid ""
 "   the vast majority of cases."
 msgstr ""
 "მიუთითეთ უმდაბლესი პრიორიტეტი, რომლის მქონე კითხვები გამოჩნდება:\n"
-" - 'კრიტიკული'  -- სიტუაციები, როდესაც მომხმარებლის ჩარევის გარეშე სისტემამ "
-"შეიძლება ავარია განიცადის.\n"
-"- 'მაღალი'  - კითხვები, რომელთაც არა აქვთ მისაღები ნაგულისხმევი პასუხები.\n"
-"- 'საშუალო'  - კითხვები მისაღები ნაგულისხმევი პასუხებით.\n"
-"- 'დაბალი'  - სტანდარტული კითხვები, რომლებზეც ნაგულისხმევი პასუხები "
-"მისაღებია უმრავლეს შემთხვევაში."
+" - 'კრიტიკული'  -- სიტუაციები, როდესაც მომხმარებლის ჩარევის\n"
+"             გარეშე სისტემამ შეიძლება ავარია განიცადოს.\n"
+"  - 'მაღალი'  - კითხვები, რომელთაც არა აქვთ მისაღები ნაგულისხმები პასუხები.\n"
+"  - 'საშუალო'  - კითხვები მისაღები ნაგულისხმევი პასუხებით.\n"
+"  - 'დაბალი'  - სტანდარტული კითხვები, რომლებზეც ნაგულისხმები\n"
+"      პასუხები მისაღებია უმრავლეს შემთხვევაში."
 
 #. Type: select
 #. Description
@@ -162,9 +162,6 @@ msgstr "დიახ"
 msgid "No"
 msgstr "არა"
 
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
-#  templates.pot (PACKAGE VERSION)#-#-#-#-
 #. Type: text
 #. Description
 #. Translators, this text will appear on a button, so KEEP IT SHORT
@@ -263,7 +260,7 @@ msgstr "კლავიშები:"
 #: ../cdebconf-text-udeb.templates:3001
 #, no-c-format
 msgid "'%c'"
-msgstr ""
+msgstr "'%c'"
 
 #. Type: text
 #. Description
@@ -292,7 +289,7 @@ msgstr "ცარიელი ჩანაწერის ამორჩევ�
 #: ../cdebconf-text-udeb.templates:7001
 #, no-c-format
 msgid "Other choices are available with '%c' and '%c'"
-msgstr ""
+msgstr "'%c'-სთან და '%c'-სთან ერთად სხვა არჩევანიცაა ხელმისაწვდომი"
 
 #. Type: text
 #. Description
@@ -339,15 +336,14 @@ msgstr "ბრძანება: '%c' დახმარება, default=%s> 
 #. :sl4:
 #: ../cdebconf-text-udeb.templates:15001
 msgid "[Press enter to continue]"
-msgstr "[გასაგრძელებლად დააჭირეთ შეყვანის ღილაკს]"
+msgstr "[გასაგრძელებლად დააჭირეთ ღილაკს 'Enter']"
 
 #. Type: select
 #. Description
 #. :sl4:
 #: ../cdebconf.templates:1001
-#, fuzzy
 msgid "Interface to use:"
-msgstr "სასურველი სერვერისები:"
+msgstr "გამოსაყენებელი ინტერფეისები:"
 
 #. Type: select
 #. Description
@@ -363,21 +359,21 @@ msgstr ""
 #. :sl4:
 #: ../cdebconf.templates:2001
 msgid "None"
-msgstr ""
+msgstr "არცერთი"
 
 #. Type: string
 #. Description
 #. :sl4:
 #: ../cdebconf.templates:2001
 msgid "'None' will never ask you any question."
-msgstr ""
+msgstr "'არც ერთი' კითხვებს არ დაგისვამთ."
 
 #. Type: string
 #. Description
 #. :sl4:
 #: ../cdebconf.templates:3001
 msgid "Text"
-msgstr ""
+msgstr "ტექსტი"
 
 #. Type: string
 #. Description
@@ -391,7 +387,7 @@ msgstr ""
 #. :sl4:
 #: ../cdebconf.templates:4001
 msgid "Newt"
-msgstr ""
+msgstr "Newt"
 
 #. Type: string
 #. Description
@@ -405,7 +401,7 @@ msgstr ""
 #. :sl4:
 #: ../cdebconf.templates:5001
 msgid "GTK"
-msgstr ""
+msgstr "GTK"
 
 #. Type: string
 #. Description

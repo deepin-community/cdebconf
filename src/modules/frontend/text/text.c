@@ -56,6 +56,7 @@
 #include <stdlib.h>
 #include <termios.h>
 #include <unistd.h>
+#include <time.h>
 #include <sys/ioctl.h>
 #include <sys/stat.h>
 #include <sys/types.h>
@@ -78,7 +79,10 @@ typedef int (text_handler)(struct frontend *obj, unsigned printed, struct questi
 #endif
 
 #define PROGRESS_NONE -10
+#define PROGRESS_STEP 10
 static int last_progress = PROGRESS_NONE;
+#define PROGRESS_TIME_STEP 60
+static int last_progress_time = 0;
 
 static sigset_t sigint_set;
 
@@ -487,10 +491,10 @@ static int text_handler_boolean(struct frontend *obj, unsigned printed, struct q
 		asprintf(&prompt, question_get_text(obj, "debconf/text-prompt",
 				"Prompt: '%c' for help> "), CHAR_HELP);
 
-	asprintf(&buf, "%d: %s", 2, question_get_text(obj, "debconf/no", "No"));
+	asprintf(&buf, "%d: %s%s", 2, question_get_text(obj, "debconf/no", "No"), def == 2 ? " [*]" : "");
 	add_history(buf);
 	free(buf);
-	asprintf(&buf, "%d: %s", 1, question_get_text(obj, "debconf/yes", "Yes"));
+	asprintf(&buf, "%d: %s%s", 1, question_get_text(obj, "debconf/yes", "Yes"), def == 1 ? " [*]" : "");
 	add_history(buf);
 	free(buf);
 
@@ -616,6 +620,7 @@ static int text_handler_multiselect(struct frontend *obj, unsigned printed, stru
 	char **defaults;
 	char *defval, *cp;
 	char *answer = NULL;
+	size_t answer_len;
 	int i, j, dcount, choice;
 	int ret = DC_OK;
 	unsigned start = 0;
@@ -709,14 +714,24 @@ static int text_handler_multiselect(struct frontend *obj, unsigned printed, stru
 		}
 	}
 
-	answer[0] = 0;
+	answer_len = 0;
+	for (i = 0; i < choices->count; i++)
+	{
+		if (choices->selected[i])
+			answer_len += strlen(choices->choices[i]) + 2;
+	}
+
+	free(answer);
+	answer = malloc(answer_len);
+	if (answer_len > 0)
+		answer[0] = 0;
 	for (i = 0; i < choices->count; i++)
 	{
 		if (choices->selected[i])
 		{
 			if (answer[0] != 0)
-				strvacat(answer, sizeof(answer), ", ", NULL);
-			strvacat(answer, sizeof(answer), choices->choices[i], NULL);
+				strvacat(answer, answer_len, ", ", NULL);
+			strvacat(answer, answer_len, choices->choices[i], NULL);
 		}
 	}
 	question_setvalue(q, answer);
@@ -781,7 +796,7 @@ static int text_handler_select(struct frontend *obj, unsigned printed, struct qu
 	}
 
 	for (i = choices->count; i > 0; i--) {
-		asprintf(&answer, "%d: %s", i, choices->choices_translated[i-1]);
+		asprintf(&answer, "%d: %s%s", i, choices->choices_translated[i-1], i == def+1 ? " [*]" : "");
 		add_history(answer);
 		free(answer);
 	}
@@ -1160,6 +1175,7 @@ static int text_go(struct frontend *obj)
 	/* Make sure that after asking the questions we show that we are back to
 	 * progressing. */
 	last_progress = PROGRESS_NONE;
+	last_progress_time = 0;
 
 	while (q != NULL) {
 		for (i = 0; i < DIM(question_handlers); i++) {
@@ -1253,6 +1269,7 @@ static void text_progress_start(struct frontend *obj, int min, int max, struct q
 static int text_progress_set(struct frontend *obj, int val)
 {
 	int new;
+	time_t now = time(NULL);
 
 	/* Catch SIGINT, and in that case, cancel the current step */
 	if (obj->methods.can_cancel_progress(obj)
@@ -1264,10 +1281,14 @@ static int text_progress_set(struct frontend *obj, int val)
 		(double)(obj->progress_max - obj->progress_min) * 100.0);
 	if (new < last_progress)
 		last_progress = PROGRESS_NONE;
+	if (last_progress_time == 0)
+		last_progress_time = now;
 	/*  Prevent verbose output  */
-	if (new / 10 == last_progress / 10)
+	if (new / PROGRESS_STEP == last_progress / PROGRESS_STEP
+	    && now < last_progress_time + PROGRESS_TIME_STEP)
 		return DC_OK;
 	last_progress = new;
+	last_progress_time = now;
 	printf("... %d%%", new);
 	fflush(stdout);
 

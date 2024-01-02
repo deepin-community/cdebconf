@@ -21,8 +21,7 @@ BIN=$(DEBCONF) $(TOOLS)
 
 LIBOBJS=commands.opic configuration.opic confmodule.opic debug.opic \
 	database.opic debconfclient.opic frontend.opic priority.opic \
-	strutl.opic question.opic template.opic rfc822.opic plugin.opic di/log.opic \
-	di/mem.opic di/mem_chunk.opic di/utils.opic di/slist.opic di/exec.opic
+	strutl.opic question.opic template.opic rfc822.opic plugin.opic
 
 CLILIBOBJS=debconfclient.opic
 
@@ -39,7 +38,7 @@ $(BIN): $(LIBNAME) $(addsuffix .o,$(BIN))
 
 $(LIBNAME): $(LIBOBJS)
 	@echo Creating library $@
-	$(CC) $(CPPFLAGS) $(CFLAGS) -shared -o $@ $(LDFLAGS) $^ -ldl @TEXTWRAP_LIBS@ @SELINUX_LIBS@
+	$(CC) $(CPPFLAGS) $(CFLAGS) -shared -o $@ $(LDFLAGS) $^ -ldl @DI_LIBS@ @TEXTWRAP_LIBS@ @SELINUX_LIBS@
 
 $(CLILIBNAME): $(CLILIBOBJS)
 	@echo Creating shared library $@

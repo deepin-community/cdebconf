@@ -10,7 +10,7 @@
 #include <string.h>
 #include "question.h"
 
-#include "di/macros.h"
+#include "debian-installer/macros.h"
 
 /* Does this compiler support sentinel checking? */
 #if DI_GNUC_PREREQ(4,0)
