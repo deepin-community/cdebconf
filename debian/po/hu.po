@@ -21,7 +21,7 @@
 #   Kalman Kemenczy <kkemenczy@gmail.com>, 2010.
 #   Andras TIMAR <timar@gnome.hu>, 2000-2001.
 # SZERVÁC Attila <sas@321.hu>, 2012.
-# Dr. Nagy Elemér Károly <eknagy@omikk.bme.hu>, 2012.
+# Dr. Nagy Elemér Károly <eknagy@omikk.bme.hu>, 2012, 2018.
 # Judit Gyimesi <judit.gyimesi.x@gmail.com>, 2013.
 #
 msgid ""
@@ -29,8 +29,8 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: cdebconf@packages.debian.org\n"
 "POT-Creation-Date: 2016-06-05 14:47+0000\n"
-"PO-Revision-Date: 2017-11-26 20:32+0000\n"
-"Last-Translator: Dr. Nagy Elemér Károly <eknagy@omikk.bme.hu>\n"
+"PO-Revision-Date: 2025-07-07 20:50+0000\n"
+"Last-Translator: Szia Tomi <sziatomi01@gmail.com>\n"
 "Language-Team: Debian L10n Hungarian <debian-l10n-hungarian@lists.debian."
 "org>\n"
 "Language: hu\n"
@@ -88,7 +88,8 @@ msgstr "alacsony"
 #: ../cdebconf-udeb.templates:2002
 msgid "Ignore questions with a priority less than:"
 msgstr ""
-"Figyelmen kívül hagyni azokat a kérdéseket, amelyek kevésbé fontosak, mint:"
+"Azoknak a kérdéseknek a figyelmen kívül hagyása, amelyek kevésbé fontosak, "
+"mint a megadott szint:"
 
 # Type: select
 # Description
@@ -102,8 +103,9 @@ msgid ""
 "might ask you. Only questions with a certain priority or higher are actually "
 "shown to you; all less important questions are skipped."
 msgstr ""
-"A debconf-os csomagok kérdéseiket osztályozzák. Csak az egy adottnál "
-"magasabb fontossági szintű kérdéseket teszik fel; a kevésbé fontosakat "
+"Azok a csomagok, amelyek a debconf-ot használják a konfigurációhoz, "
+"rangsorolják a kérdéseket amelyeket feltehetnek. Csak a megadott vagy annál "
+"magasabb fontossági szintű kérdéseket teszik fel, a kevésbé fontosakat "
 "kihagyják."
 
 # Type: select
@@ -122,12 +124,14 @@ msgid ""
 " - 'low' is for trivial items that have defaults that will work in\n"
 "   the vast majority of cases."
 msgstr ""
-"Kiválasztható, mi legyen a legkisebb fontosságú kérdés, ami megjelenjen:\n"
-" - a 'kritikus'-ak felhasználói beavatkozást igényelnek.\n"
-" - a 'magas'-aknak nincs jó általános alapértéke\n"
-" - a 'közepes'-ekre van jó alapérték.\n"
-" - az 'alacsony'-ak triviálisak, melyek alapértékei szinte mindig "
-"tökéletesek."
+"Kiválaszthatod a megjelenítendő legkisebb fontossági szintű kérdést:\n"
+" - A „kritikus” szintű kérdések felhasználói beavatkozást igényelnek,\n"
+"   különben tönkreteszik a rendszert.\n"
+" - A „magas” szintű kérdéseknek nincsenek ésszerű alapértelmezett értékei.\n"
+" - A „közepes” szint a normál kérdésekhez tartozik, amelyeknek ésszerű "
+"alapértelmezett értékei vannak.\n"
+" - Az „alacsony” szint a triviális kérdésekhez tartozik, amelyeknek\n"
+"   az alapértelmezett értékei az esetek túlnyomó többségében működnek."
 
 # Type: select
 # Description
@@ -140,8 +144,8 @@ msgid ""
 "For example, this question is of medium priority, and if your priority were "
 "already 'high' or 'critical', you wouldn't see this question."
 msgstr ""
-"E kérdés például közepes fontosságú, ha a fontossági szint most 'magas' vagy "
-"'kritikus' lenne, nem látszódna."
+"Például ez a kérdés közepes fontossági szintű, és ha a szint most magas vagy "
+"kritikus lenne, akkor nem látnád ezt a kérdést."
 
 # Type: text
 # Description
@@ -151,7 +155,7 @@ msgstr ""
 #. :sl2:
 #: ../cdebconf-priority.templates:1001
 msgid "Change debconf priority"
-msgstr "Debconf-kérdések fontosságának megváltoztatása"
+msgstr "A debconf kérdések fontossági szintjének megváltoztatása"
 
 #. Type: text
 #. Description
@@ -208,7 +212,9 @@ msgstr "Mégsem"
 #. :sl1:
 #: ../cdebconf-newt-udeb.templates:6001
 msgid "<Tab> moves; <Space> selects; <Enter> activates buttons"
-msgstr "A <Tab> mozog; a <Space> kijelöl; az <Enter> működteti a gombokat"
+msgstr ""
+"A <Tab> billentyűvel mozogsz; a <Space> kijelöl; az <Enter> működteti a "
+"gombokat"
 
 #. Type: text
 #. Description
@@ -218,8 +224,8 @@ msgstr "A <Tab> mozog; a <Space> kijelöl; az <Enter> működteti a gombokat"
 #: ../cdebconf-newt-udeb.templates:7001
 msgid "<F1> for help; <Tab> moves; <Space> selects; <Enter> activates buttons"
 msgstr ""
-"Az <F1> súg; a <Tab> mozog; a <Space> kijelöl; az <Enter> működteti a "
-"gombokat"
+"<F1> a súgó; a <Tab> billentyűvel mozogsz; a <Space> kijelöl; <Enter> "
+"működtet"
 
 # Type: error
 # Description
@@ -270,7 +276,7 @@ msgstr "Képernyőkép"
 #: ../cdebconf-gtk-udeb.templates:8001
 #, no-c-format
 msgid "Screenshot saved as %s"
-msgstr "Képernyőkép mentése így: %s"
+msgstr "Képernyőkép mentése mint: %s"
 
 #. Type: text
 #. Description
@@ -285,7 +291,7 @@ msgstr "!! HIBA: %s"
 #. :sl4:
 #: ../cdebconf-text-udeb.templates:2001
 msgid "KEYSTROKES:"
-msgstr "GOMBNYOMÁSOK:"
+msgstr "BILLENTYŰLEÜTÉSEK:"
 
 #. Type: text
 #. Description
@@ -293,14 +299,14 @@ msgstr "GOMBNYOMÁSOK:"
 #: ../cdebconf-text-udeb.templates:3001
 #, no-c-format
 msgid "'%c'"
-msgstr "'%c'"
+msgstr "„%c”"
 
 #. Type: text
 #. Description
 #. :sl4:
 #: ../cdebconf-text-udeb.templates:4001
 msgid "Display this help message"
-msgstr "E súgóüzenet megjelenítése"
+msgstr "Megjeleníti ezt a súgóüzenetet"
 
 #. Type: text
 #. Description
@@ -314,7 +320,7 @@ msgstr "Vissza az előző kérdéshez"
 #. :sl4:
 #: ../cdebconf-text-udeb.templates:6001
 msgid "Select an empty entry"
-msgstr "Üres elem kiválasztása"
+msgstr "Válassz egy üres bejegyzést"
 
 #. Type: text
 #. Description
@@ -322,7 +328,7 @@ msgstr "Üres elem kiválasztása"
 #: ../cdebconf-text-udeb.templates:7001
 #, no-c-format
 msgid "Other choices are available with '%c' and '%c'"
-msgstr "Egyéb lehetőségek elérhetőek: '%c' és '%c'"
+msgstr "Egyéb választási lehetőségek érhetőek el %c és %c segítségével"
 
 #. Type: text
 #. Description
@@ -330,7 +336,7 @@ msgstr "Egyéb lehetőségek elérhetőek: '%c' és '%c'"
 #: ../cdebconf-text-udeb.templates:8001
 #, no-c-format
 msgid "Previous choices are available with '%c'"
-msgstr "Az előző lehetőségek elérhetőek: '%c'"
+msgstr "Az előző választási lehetőségek %c segítségével érhetők el"
 
 #. Type: text
 #. Description
@@ -338,7 +344,7 @@ msgstr "Az előző lehetőségek elérhetőek: '%c'"
 #: ../cdebconf-text-udeb.templates:9001
 #, no-c-format
 msgid "Next choices are available with '%c'"
-msgstr "További lehetőségek elérhetőek: '%c'"
+msgstr "További választási lehetőségek érhetők el %c segítségével"
 
 #. Type: text
 #. Description
@@ -369,7 +375,7 @@ msgstr "Kérdés: '%c' a súgóhoz, alapérték=%s> "
 #. :sl4:
 #: ../cdebconf-text-udeb.templates:15001
 msgid "[Press enter to continue]"
-msgstr "[Üss entert a folytatáshoz]"
+msgstr "[Nyomd meg az entert a folytatáshoz]"
 
 #. Type: select
 #. Description
@@ -387,7 +393,7 @@ msgid ""
 "You can select the type of user interface they use."
 msgstr ""
 "A debconf-ot használó csomagok egységes felületet használnak. Itt lehet "
-"kiválasztani, melyik legyen az."
+"kiválasztani, hogy melyik legyen az."
 
 #. Type: string
 #. Description
@@ -401,7 +407,7 @@ msgstr "Nincs"
 #. :sl4:
 #: ../cdebconf.templates:2001
 msgid "'None' will never ask you any question."
-msgstr "A 'Nincs' lehetőség sosem kérdez."
+msgstr "A „Nincs” lehetőség sosem kérdez."
 
 #. Type: string
 #. Description
@@ -415,7 +421,7 @@ msgstr "Szöveg"
 #. :sl4:
 #: ../cdebconf.templates:3001
 msgid "'Text' is a traditional plain text interface."
-msgstr "A 'Szöveg' a hagyományos szöveges felület."
+msgstr "A „Szöveg” a hagyományos szöveges felület."
 
 #. Type: string
 #. Description
@@ -429,7 +435,7 @@ msgstr "Newt"
 #. :sl4:
 #: ../cdebconf.templates:4001
 msgid "'Newt' is a full-screen, character based interface."
-msgstr "A 'Newt' egy teljes képernyős karakter alapú felület."
+msgstr "A „Newt” egy teljes képernyős karakter alapú felület."
 
 #. Type: string
 #. Description
@@ -445,4 +451,5 @@ msgstr "GTK"
 msgid ""
 "'GTK' is a graphical interface that may be used in any graphical environment."
 msgstr ""
-"A 'GTK' egy grafikus felület, mely bármely grafikus környezetben használható."
+"A „GTK” egy grafikus felület, mely bármelyik grafikus környezetben "
+"használható."

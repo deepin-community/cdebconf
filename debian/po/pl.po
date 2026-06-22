@@ -37,15 +37,15 @@ msgstr ""
 "Project-Id-Version: debian-installer\n"
 "Report-Msgid-Bugs-To: cdebconf@packages.debian.org\n"
 "POT-Creation-Date: 2016-06-05 14:47+0000\n"
-"PO-Revision-Date: 2023-08-03 08:07+0000\n"
+"PO-Revision-Date: 2025-01-31 14:41+0000\n"
 "Last-Translator: Matthaiks <kitynska@gmail.com>\n"
 "Language-Team: Polish <debian-l10n-polish@lists.debian.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
 
 #. Type: select
 #. Choices
@@ -93,7 +93,7 @@ msgid ""
 msgstr ""
 "Pakiety używające debconfa do konfiguracji nadają zadawanym pytaniom "
 "priorytety. Tylko pytania o pewnym lub wyższym priorytecie są Tobie zadawane "
-"- wszystkie mniej ważne są pomijane."
+"— wszystkie mniej ważne są pomijane."
 
 #. Type: select
 #. Description
@@ -126,8 +126,8 @@ msgid ""
 "For example, this question is of medium priority, and if your priority were "
 "already 'high' or 'critical', you wouldn't see this question."
 msgstr ""
-"Dla przykładu, to pytanie ma średni priorytet, więc gdyby do tej pory Twój "
-"priorytet był 'wysoki' lub 'krytyczny', nie zobaczyłbyś tego pytania."
+"Na przykład, to pytanie ma średni priorytet, a gdyby Twój priorytet był już "
+"„wysoki” lub „krytyczny”, nie byłoby tego pytania."
 
 #. Type: text
 #. Description
